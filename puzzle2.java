@@ -20,7 +20,7 @@ public class Puzzle2 {
             tmp = extraWater / (i + 1);
             extraWater = 0;
             for (int j = 0; j <= i; j++) {
-                if (cups[i + j] < tmp) {
+                if (cups[cnt] < tmp) {
                     extraWater += tmp - cups[cnt];
                 } else {
                     cups[cnt] = tmp;
@@ -30,8 +30,13 @@ public class Puzzle2 {
             }System.out.println();
         }
         tmp = extraWater / level;
-        for (int i = 0; i < level; i++) {
-            System.out.print( nf.format(tmp)+ " ");
+        for ( ; cnt < cups.length; cnt++) {
+            if (cups[cnt] < tmp) {
+                System.out.print( nf.format(cups[cnt])+ " ");
+            } else {
+                System.out.print( nf.format(tmp)+ " ");
+            }
+            
         }
     }
 

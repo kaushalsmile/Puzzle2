@@ -16,7 +16,7 @@ public class Puzzle2 {
         }
         double extraWater = input.nextDouble();
         double tmp = 0;
-        for (int i = 0; i < level - 1; i++) {
+        for (int i = 0; i < level ; i++) {
             tmp = extraWater / (i + 1);
             extraWater = 0;
             for (int j = 0; j <= i; j++) {
@@ -28,15 +28,6 @@ public class Puzzle2 {
                 System.out.print(nf.format(cups[cnt]) + " ");
                 cnt ++;
             }System.out.println();
-        }
-        tmp = extraWater / level;
-        for ( ; cnt < cups.length; cnt++) {
-            if (cups[cnt] < tmp) {
-                System.out.print( nf.format(cups[cnt])+ " ");
-            } else {
-                System.out.print( nf.format(tmp)+ " ");
-            }
-            
         }
     }
 
